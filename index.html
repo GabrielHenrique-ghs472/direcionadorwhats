@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecionando para WhatsApp...</title>
+  <script>
+    window.onload = function() {
+      const links = [
+        "https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações",
+        "https://wa.me/5521999999999?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20produto"
+      ];
+      const randomIndex = Math.floor(Math.random() * links.length);
+      window.location.href = links[randomIndex];
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecionando para o WhatsApp...</p>
+</body>
+</html>
