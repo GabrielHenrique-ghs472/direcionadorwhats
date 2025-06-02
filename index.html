@@ -5,15 +5,23 @@
   <meta charset="UTF-8">
   <title>Redirecionando para WhatsApp...</title>
   <script>
-    window.onload = function() {
-      const links = [
-        "https://wa.me/5524981162844?text=Olá!%20Gostaria%20de%20mais%20informações",
-        "https://wa.me/5511978591515?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20produto"
-      ];
-      const randomIndex = Math.floor(Math.random() * links.length);
-      window.location.href = links[randomIndex];
-    };
-  </script>
+  window.onload = function () {
+    const links = [
+      "https://wa.me/5524981162844?text=Olá!%20Gostaria%20de%20mais%20informações",
+      "https://wa.me/5511978591515?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20produto"
+    ];
+
+    // Lê o índice anterior salvo (se houver)
+    let lastIndex = parseInt(localStorage.getItem("zap_index")) || 0;
+
+    // Redireciona para o link da vez
+    window.location.href = links[lastIndex];
+
+    // Define o próximo da fila e salva
+    const nextIndex = (lastIndex + 1) % links.length;
+    localStorage.setItem("zap_index", nextIndex);
+  };
+</script>c
 </head>
 <body>
   <p>Redirecionando para o WhatsApp...</p>
