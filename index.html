@@ -1,29 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Redirecionando para WhatsApp...</title>
   <script>
-  window.onload = function () {
-    const links = [
-      "https://wa.me/5524993241672?text=Olá!%20Sou%20dona%20de%20salão%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20linha%20profissional
-",
-      "https://wa.me/5524998917606?text=Olá!%20Sou%20dona%20de%20salão%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20linha%20profissional
-"
-    ];
+    window.onload = function () {
+      const links = [
+        "https://wa.me/5524993241672?text=Olá!%20Sou%20dona%20de%20salão%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20linha%20profissional",
+        "https://wa.me/5524998917606?text=Olá!%20Sou%20dona%20de%20salão%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20linha%20profissional"
+      ];
 
-    // Lê o índice anterior salvo (se houver)
-    let lastIndex = parseInt(localStorage.getItem("zap_index")) || 0;
-
-    // Redireciona para o link da vez
-    window.location.href = links[lastIndex];
-
-    // Define o próximo da fila e salva
-    const nextIndex = (lastIndex + 1) % links.length;
-    localStorage.setItem("zap_index", nextIndex);
-  };
-</script>c
+      let lastIndex = parseInt(localStorage.getItem("zap_index")) || 0;
+      window.location.href = links[lastIndex];
+      const nextIndex = (lastIndex + 1) % links.length;
+      localStorage.setItem("zap_index", nextIndex);
+    };
+  </script>
 </head>
 <body>
   <p>Redirecionando para o WhatsApp...</p>
